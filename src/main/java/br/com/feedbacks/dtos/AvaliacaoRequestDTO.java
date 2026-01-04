@@ -1,4 +1,4 @@
 package br.com.feedbacks.dtos;
 
-public record AvaliacaoRequestDTO(RequestPayloadDTO requestPayload) {
+public record AvaliacaoRequestDTO(String descricao, Integer nota) {
 }

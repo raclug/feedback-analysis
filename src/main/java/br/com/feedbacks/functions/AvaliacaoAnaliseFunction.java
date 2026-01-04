@@ -23,9 +23,9 @@ public class AvaliacaoAnaliseFunction {
     public Function<AvaliacaoRequestDTO, String> analisarAvaliacao() {
         return payload -> {
 
-            if (payload.requestPayload().nota() <= 5) {
+            if (payload.nota() <= 5) {
                 String body = String.format(
-                        BODY, payload.requestPayload().descricao(), payload.requestPayload().nota());
+                        BODY, payload.descricao(), payload.nota());
 
                 emailService.sendSimpleEmail(SUBJECT, body);
             }
